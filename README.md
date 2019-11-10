@@ -13,7 +13,7 @@ docker run -d --name=openvpn1 -v ~/openvpn-docker-alpine/volumes:/etc/openvpn --
 ```
 after generate keys for user
 ```
-./easy-rsa/easyrsa3/easyrsa build-server-full Your_User nopass
+cd easy-rsa/easyrsa3 && ./easyrsa build-server-full Your_User nopass
 ```
 and create client.ovpn from client.ovpn.example
 
