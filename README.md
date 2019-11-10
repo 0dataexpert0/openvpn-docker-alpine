@@ -16,6 +16,21 @@ after generate keys for user
 cd easy-rsa/easyrsa3 && ./easyrsa build-server-full Your_User nopass
 ```
 and create client.ovpn from client.ovpn.example
+cd volumes/keys
+
+echo "<ca>" >> client_example2.ovpn
+cat ca.crt >> client_example2.ovpn
+echo "</ca>" >> client_example2.ovpn
+echo "<cert>" >> client_example2.ovpn
+cat vpn-server.crt >> client_example2.ovpn
+echo "</cert>" >> client_example2.ovpn
+echo "<key>" >> client_example2.ovpn
+cat vpn-server.key >> client_example2.ovpn
+echo "</key>" >> client_example2.ovpn
+echo "<tls-auth>" >> client_example2.ovpn
+cat ta.key >> client_example2.ovpn
+echo "</tls-auth>" >> client_example2.ovpn
+
 
 ---
 ```
